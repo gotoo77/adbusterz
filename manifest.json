@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "AdBusterZ",
+  "version": "1.1",
+  "description": "Plugin subversif qui remplace les publicit\u00e9s par des punchlines anticapitalistes et bloque les r\u00e9gies publicitaires.",
+  "icons": {
+    "128": "icons/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "adbusterz_observer.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "*://*.doubleclick.net/*",
+    "*://*.amazon-adsystem.com/*"
+  ],
+  "action": {
+    "default_icon": "icons/icon-128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "punchlines.json"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}

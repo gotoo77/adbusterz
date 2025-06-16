@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "doubleclick.net",
+      "resourceTypes": [
+        "script",
+        "sub_frame",
+        "image"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "amazon-adsystem.com",
+      "resourceTypes": [
+        "script",
+        "sub_frame",
+        "image"
+      ]
+    }
+  }
+]
